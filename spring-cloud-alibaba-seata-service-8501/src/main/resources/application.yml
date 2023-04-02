@@ -1,0 +1,32 @@
+server:
+  port: 8501
+spring:
+  application:
+    name: "spring-cloud-alibaba-seata"
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:1111
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+seata:
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:1111
+      group: "SEATA_GROUP"
+      namespace: ""
+      username: "nacos"
+      password: "nacos"
+  registry:
+    type: nacos
+    nacos:
+      application: "seata-server"
+      server-addr: 127.0.0.1:1111 # Nacos 注册中心的地址
+      group: "SEATA_GROUP" #分组
+      namespace: ""
+      username: "nacos"   #Nacos 注册中心的用户名
+      password: "nacos"   # Nacos 注册中心的密码

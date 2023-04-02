@@ -1,0 +1,18 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: spring-cloud-alibaba-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:1111
+      config:
+        server-addr: 127.0.0.1:1111 #Nacos作为配置中心地址
+        file-extension: yaml #指定yaml格式的配置
+logging:
+  level:
+    com.example.springcloudalibabaconsumernacos8002: debug
+#spring-cloud-alibaba-provider:
+#  ribbon:
+#    NFLoadBaIancerRu1eCIassName: com.tulingxueyuan.ribbon.ruIe.CustomRuIel
