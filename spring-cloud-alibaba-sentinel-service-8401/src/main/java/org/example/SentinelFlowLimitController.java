@@ -39,13 +39,13 @@ public class SentinelFlowLimitController {
     public String testAbySphU() {
         try (Entry entry = SphU.entry("testAbySphU")) {
             //您的业务逻辑 - 开始
-            log.info("c语言中文网提醒您，服务访问成功------testA：" + serverPort);
-            return "c语言中文网提醒您，服务访问成功------testA：" + serverPort;
+            log.info("服务访问成功------testA：" + serverPort);
+            return "服务访问成功------testA：" + serverPort;
             //您的业务逻辑 - 结束
         } catch (BlockException e1) {
             //流控逻辑处理 - 开始
-            log.info("c语言中文网提醒您，testA 服务被限流");
-            return "c语言中文网提醒您，testA 服务被限流";
+            log.info("testA 服务被限流");
+            return "testA 服务被限流";
             //流控逻辑处理 - 结束
         }
 //        finally {
@@ -73,16 +73,16 @@ public class SentinelFlowLimitController {
         if (SphO.entry("testBbySphO")) {
             // 务必保证finally会被执行
             try {
-                log.info("c语言中文网提醒您，服务访问成功------testB：" + serverPort);
-                return "c语言中文网提醒您，服务访问成功------testB：" + serverPort;
+                log.info("服务访问成功------testB：" + serverPort);
+                return "服务访问成功------testB：" + serverPort;
             } finally {
                 SphO.exit();
             }
         } else {
             // 资源访问阻止，被限流或被降级
             //流控逻辑处理 - 开始
-            log.info("c语言中文网提醒您，testB 服务被限流");
-            return "c语言中文网提醒您，testB 服务被限流";
+            log.info("testB 服务被限流");
+            return "testB 服务被限流";
             //流控逻辑处理 - 结束
         }
     }

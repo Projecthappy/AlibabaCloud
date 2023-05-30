@@ -13,25 +13,25 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RefreshScope
 public class DeptController_Consumer {
-//    @Resource
-//    private RestTemplate restTemplate;
-//    @Value("${service-url.nacos-user-service}")
-//    private String serverURL; //服务提供者的服务名
 
     @Autowired
     Get get;
     @Value("${config.info}")
     private String ConfigInfo;
 
-    @RequestMapping("/1get")
-    public String get() {
+    @RequestMapping("/getConfigInfo")
+    public String getConfigInfo() {
         return ConfigInfo;
     }
-    @GetMapping("/consumer/dept/nacos/{id}")
+
+    @GetMapping("/nacos/{id}")
     public String paymentInfo(@PathVariable("id") int id) {
-//        return restTemplate.getForObject(serverURL + "/dept/nacos/" + id, String.class);
         return get.getPayment(id);
     }
 
+    @RequestMapping("/timeout/{id}")
+    public int timeout(@PathVariable("id") int id){
+        return get.getTimeOutTest(id);
+    }
 
 }
