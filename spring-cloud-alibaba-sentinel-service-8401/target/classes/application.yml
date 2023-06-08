@@ -11,6 +11,13 @@ spring:
       transport:
         dashboard: localhost:8080
         port: 8719
+      datasource:
+        sentinel-rule:
+          nacos:
+            server-addr: localhost:1111
+            dataId: sentinel-rule
+            rule-type: flow
+
 management:
   endpoints:
     web:
