@@ -18,6 +18,7 @@
         <module>spring-cloud-alibaba-consumer-nacos-8002</module>
         <module>spring-cloud-alibaba-sentinel-service-8401</module>
         <module>spring-cloud-alibaba-seata-service-8501</module>
+        <module>gateway</module>
     </modules>
 
     <properties>

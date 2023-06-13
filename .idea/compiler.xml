@@ -11,6 +11,7 @@
         <module name="spring-cloud-alibaba-sentinel-service-8401" />
         <module name="spring-cloud-alibaba-seata-service-8501" />
         <module name="spring-cloud-alibaba-provider-8001" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AlibabaCloud" options="" />
+      <module name="gateway" options="-parameters" />
       <module name="spring-cloud-alibaba-consumer-nacos-8002" options="-parameters" />
       <module name="spring-cloud-alibaba-provider-8001" options="-parameters" />
       <module name="spring-cloud-alibaba-provider-8001 (1)" options="-parameters" />

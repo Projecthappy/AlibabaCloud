@@ -1,0 +1,17 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:1111
+    gateway:
+      routes:
+        - id: provider
+          uri: lb://spring-cloud-alibaba-provider
+          predicates:
+            - Path=/gateway/dept/nacos/**
+          filters:
+            - StripPrefix=1
